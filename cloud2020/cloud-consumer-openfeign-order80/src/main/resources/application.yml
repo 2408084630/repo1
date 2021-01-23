@@ -1,0 +1,21 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-order-service
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka7002.com:7002/eureka,http://eureka7001.com:7001eureka
+
+ribbon:
+  ReadTimeout: 5000  #连接超时控制
+  ConnectTimeout: 5000    #获取资源超市控制
+
+logging:
+  level:
+   com.swjd.springcloud.service.PaymentFeignService: debug
